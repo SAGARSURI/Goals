@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "353599697422",
+    "firebase_url": "https://firestoredemo-f2284.firebaseio.com",
+    "project_id": "firestoredemo-f2284",
+    "storage_bucket": "firestoredemo-f2284.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353599697422:android:88f1e9f175f3a7c6",
+        "android_client_info": {
+          "package_name": "com.sagar.firestoredemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353599697422-pbc1e8qnt096l142kh3vh09lpil33sfm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnY4o6G4ygRAdoAiHr8_nRYvV6--m4fTY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
