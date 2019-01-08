@@ -1,4 +1,4 @@
-import 'package:firestore_demo/src/utils/strings.dart';
+import '../../utils/strings.dart';
 import 'package:flutter/material.dart';
 import '../../blocs/login_bloc_provider.dart';
 import '../goals_list.dart';
@@ -88,7 +88,7 @@ class SignInFormState extends State<SignInForm> {
           if (_bloc.validateFields()) {
             authenticateUser();
           } else {
-            showErroMessage();
+            showErrorMessage();
           }
         });
   }
@@ -114,7 +114,7 @@ class SignInFormState extends State<SignInForm> {
     });
   }
 
-  void showErroMessage() {
+  void showErrorMessage() {
     final snackbar = SnackBar(
         content: Text(StringConstant.errorMessage),
         duration: new Duration(seconds: 2));

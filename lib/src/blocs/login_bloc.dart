@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:firestore_demo/src/utils/strings.dart';
+import '../utils/strings.dart';
 
 import '../resources/repository.dart';
 import 'package:rxdart/rxdart.dart';
@@ -69,7 +69,7 @@ class LoginBloc {
         _email.value.contains('@') &&
         _password.value.length > 3) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }

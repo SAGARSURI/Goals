@@ -1,4 +1,4 @@
-import 'package:firestore_demo/src/utils/strings.dart';
+import '../utils/strings.dart';
 import 'package:flutter/material.dart';
 import 'widgets/my_goals_list.dart';
 import 'widgets/people_goals_list.dart';

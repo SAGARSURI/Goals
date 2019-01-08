@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firestore_demo/src/models/goal.dart';
-import 'package:firestore_demo/src/models/other_goal.dart';
-import 'package:firestore_demo/src/utils/strings.dart';
+import '../models/goal.dart';
+import '../models/other_goal.dart';
+import '../utils/strings.dart';
 
 import '../resources/repository.dart';
 import 'package:rxdart/rxdart.dart';
@@ -81,9 +81,10 @@ class GoalsBloc {
       List<OtherGoal> goalList = [];
       docList.forEach((document) {
         String email = document.data[StringConstant.emailField];
-        Map<String, String> goals = document.data[StringConstant.goalField] != null
-            ? document.data[StringConstant.goalField].cast<String, String>()
-            : null;
+        Map<String, String> goals =
+            document.data[StringConstant.goalField] != null
+                ? document.data[StringConstant.goalField].cast<String, String>()
+                : null;
         if (goals != null) {
           goals.forEach((title, message) {
             OtherGoal otherGoal = OtherGoal(email, title, message);

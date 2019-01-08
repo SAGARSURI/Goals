@@ -24,37 +24,49 @@ class FirestoreProvider {
   }
 
   Future<void> uploadGoal(String title, String documentId, String goal) async {
-    DocumentSnapshot doc = await _firestore.collection("users").document(documentId).get();
-    Map<String,String> goals = doc.data["goals"] !=null ? doc.data["goals"].cast<String,String>() : null;
-    if(goals!=null){
+    DocumentSnapshot doc =
+        await _firestore.collection("users").document(documentId).get();
+    Map<String, String> goals = doc.data["goals"] != null
+        ? doc.data["goals"].cast<String, String>()
+        : null;
+    if (goals != null) {
       goals[title] = goal;
-    }else{
+    } else {
       goals = Map();
       goals[title] = goal;
     }
     return _firestore
         .collection("users")
         .document(documentId)
-        .setData({'goals': goals, 'goalAdded': true},merge: true);
+        .setData({'goals': goals, 'goalAdded': true}, merge: true);
   }
 
   Stream<DocumentSnapshot> myGoalList(String documentId) {
-    return _firestore.collection("users")
-        .document(documentId).snapshots();
+    return _firestore.collection("users").document(documentId).snapshots();
   }
 
   Stream<QuerySnapshot> othersGoalList() {
-    return _firestore.collection("users").where('goalAdded', isEqualTo: true).snapshots();
+    return _firestore
+        .collection("users")
+        .where('goalAdded', isEqualTo: true)
+        .snapshots();
   }
 
-  removeGoal(String title, String documentId) async {
-    DocumentSnapshot doc = await _firestore.collection("users").document(documentId).get();
-    Map<String, String> goals = doc.data["goals"].cast<String,String>();
+  void removeGoal(String title, String documentId) async {
+    DocumentSnapshot doc =
+        await _firestore.collection("users").document(documentId).get();
+    Map<String, String> goals = doc.data["goals"].cast<String, String>();
     goals.remove(title);
-    if(goals.isNotEmpty){
-      _firestore.collection("users").document(documentId).updateData({"goals":goals});
-    }else{
-      _firestore.collection("users").document(documentId).updateData({'goals': FieldValue.delete(), 'goalAdded': false});
+    if (goals.isNotEmpty) {
+      _firestore
+          .collection("users")
+          .document(documentId)
+          .updateData({"goals": goals});
+    } else {
+      _firestore
+          .collection("users")
+          .document(documentId)
+          .updateData({'goals': FieldValue.delete(), 'goalAdded': false});
     }
   }
 }

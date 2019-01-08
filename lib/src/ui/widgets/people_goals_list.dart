@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../blocs/goals_bloc_provider.dart';
-import 'package:firestore_demo/src/models/other_goal.dart';
+import '../../models/other_goal.dart';
 
 class PeopleGoalsListScreen extends StatefulWidget {
   @override
@@ -65,6 +65,7 @@ class _PeopleGoalsListState extends State<PeopleGoalsListScreen> {
               goalsList[index].email,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
+                fontSize: 10.0,
               ),
             ),
           );

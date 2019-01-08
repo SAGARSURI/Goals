@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../blocs/goals_bloc_provider.dart';
-import 'package:firestore_demo/src/models/goal.dart';
+import '../../models/goal.dart';
 
 class MyGoalsListScreen extends StatefulWidget {
   final String _emailAddress;
