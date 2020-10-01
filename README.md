@@ -1,6 +1,7 @@
 # Goals
 
 A Flutter app showcasing the implementation of Firestore and MLvision operations in BLoC pattern
+Beautiful implementation of BloC Pattern.
 
 Screenshots of the app:
 
